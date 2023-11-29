@@ -1,0 +1,19 @@
+spin_manifest_version = 2
+
+[application]
+name = "aisls"
+version = "0.1.0"
+authors = ["Luis Mori Guerra <luismorith@gmail.com>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "aisls"
+
+[component.aisls]
+source = "target/wasm32-wasi/release/aisls.wasm"
+allowed_outbound_hosts = []
+ai_models = ["llama2-chat"]
+[component.aisls.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]

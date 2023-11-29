@@ -1,0 +1,49 @@
+
+brew tap fermyon/tap
+brew install fermyon/tap/spin
+brew install spin
+brew uninstall spin
+
+spin new
+
+cd first-ai-app
+
+spin build
+
+rustup update
+
+curl https://developer.fermyon.com/downloads/install.sh | bash
+
+./spin login
+
+rustup target add wasm32-wasi
+
+
+spin build
+
+spin up
+
+spin deploy
+
+open https://aisls-juqkljn2.fermyon.app/
+
+spin plugins search
+
+spin plugins install cloud-gpu
+
+spin cloud-gpu init
+
+[llm_compute]
+type = "remote_http"
+url = "https://fermyon-cloud-gpu-annpqmsl.fermyon.app"
+auth_token = "fb0c0ae6-3d8e-4663-9156-62e3de6bab3d"
+
+
+Once added, you can spin up with the following argument --runtime-config-file <path/to/runtime/config>.
+
+
+spin up --runtime-config-file runtime-config.toml
+
+Serving http://127.0.0.1:3000
+Available Routes:
+  aisls: http://127.0.0.1:3000 (wildcard)
