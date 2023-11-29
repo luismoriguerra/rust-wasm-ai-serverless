@@ -47,3 +47,5 @@ spin up --runtime-config-file runtime-config.toml
 Serving http://127.0.0.1:3000
 Available Routes:
   aisls: http://127.0.0.1:3000 (wildcard)
+
+spin cloud-gpu destroy
